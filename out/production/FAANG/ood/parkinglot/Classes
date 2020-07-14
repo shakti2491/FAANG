@@ -1,0 +1,43 @@
+abstract class ParkingSpot{
+long id;
+boolean reserved;
+}
+
+class CompactParkingSpot extends ParkingSpot{
+
+}
+
+class BikeParkingSpot extends ParkingSpot {
+
+}
+
+
+class ParkingTicket{
+id;
+spotId;
+timeEntry;
+timeExit;
+}
+
+interface Terminal {
+getId();
+}
+
+class Entry implements Terminal{
+getTicket(ParkingSpotType)
+}
+class ExitTerminal implements Terminal{
+acceptTicket(Parking Ticket);
+}
+
+interface ParkingAssignmentStrategy{
+getParkingSpot(Terminal terminal)
+
+releaseParkingSpot(ParkingSpot spot)
+}
+// Nearest Parking strategy
+Map of minHeaps
+
+PaymentProcess {
+process(Amount amount)
+}

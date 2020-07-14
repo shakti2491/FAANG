@@ -1,0 +1,21 @@
+1. Big Parking Lots
+2. 4 Entrances - 4 Exits
+3 Ticket and spot collected at Entrance
+4 Parking spot should be nearest to entrance
+5 Limit/Capacity
+6 Different types of parking spots
+7 Hourly fees after exit
+8 cash / credit cards
+Configurable/ Reusable
+
+
+Actors
+1. Parking Lot System
+2. Exit Entry Terminals
+  printers
+   payment
+
+ 3. Parking Spot
+ 4. Ticket
+ 5.Database
+ 6 Monitoring System

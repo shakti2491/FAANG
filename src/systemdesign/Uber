@@ -1,0 +1,27 @@
+Functional Requirements
+
+
+1 A/c passenger driver
+2 passenger should be asble to see his location and nearby rides
+3 ETA for destination
+4 List of previous trips
+5 Book a ride
+6 ETA of driver arrival
+
+
+// Driver
+1 Provide availability
+2 Request for ride for neearby passenger
+
+
+1 Once trip confirmed both can see each other local
+2 Driver Trip completion
+3 Rate each other
+4 Monitoring and analytics system
+
+Non Functional
+1. Highly available
+2. Scalable with increased number of users
+3. Matching should be fast
+4. Few Components should be consistent(Trip Info)
+5. Durability (Driver and Passenger Info)
