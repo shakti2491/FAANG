@@ -42,7 +42,7 @@ public class Test1
 
         else{
             tree2strHelper(t.left);
-            tree2strHelper(t.right,str);
+            tree2strHelper(t.right);
         }
 
 
