@@ -2,8 +2,33 @@ package miscellanous;
 
 public class Test
 {
+    public static void main(String[] args)
+    {
+        reverseWords("the sjrf sfjssdf    fffsdfs");
+        int[] arr = new int[3];
+        method(arr);
+        System.out.println(arr);
+    }
     // Function to print all the perfect
     // squares from the given range
+
+    public static String reverseWords(String s) {
+        String[] words = s.trim().split(" ");
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=words.length-1; i>=0;i++){
+            words[i].trim();
+
+            if(words[i].length()!=0){
+                sb.append(words[i]);
+
+            }
+
+        }
+
+        return sb.toString();
+    }
+
     static void perfectSquares(float l, float r)
     {
 
@@ -37,12 +62,7 @@ public class Test
     }
 
     // Driver code
-    public static void main(String[] args)
-    {
-       int[] arr = new int[3];
-       method(arr);
-        System.out.println(arr);
-    }
+
    static void method(int[] arr){
         arr[0] = 1;
     }

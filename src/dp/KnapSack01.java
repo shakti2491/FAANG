@@ -11,6 +11,7 @@ public class KnapSack01
     public static void main(String[] args)
     {
         int arr[][] = new int[][] {{3,4},{2,3},{4,2},{4,3}};
+        helper2(new int[]{1,2},1);
         knapSack(arr,6);
     }
   static   int knapSack(int[][] arr, int w)
@@ -37,6 +38,22 @@ public class KnapSack01
         return dp[w];
     }
 
+
+
+   static int helper2(int[] arr, int capacity){
+        int dp[][] = new int[arr.length+1][capacity+1];
+
+       int max = 0;
+       for(int i=0;i<arr.length;i++){
+           for(int j =arr[i];j<=capacity;j++){
+               dp[i+1][j] = Math.max(dp[i][j], arr[i]+dp[i][j-arr[i]]);
+               if(dp[i+1][j]>max)
+                   max = dp[i+1][j];
+           }
+       }
+
+       return max;
+    }
 
  static    void test(){
 
