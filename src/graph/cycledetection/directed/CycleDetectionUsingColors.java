@@ -1,6 +1,6 @@
 package graph.cycledetection.directed;
 
-import graph.cycledetection.utils.Graph;
+import graph.utils.Graph;
 
 import java.util.List;
 

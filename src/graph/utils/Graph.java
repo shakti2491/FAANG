@@ -1,4 +1,4 @@
-package graph.cycledetection.utils;
+package graph.utils;
 
 import java.util.ArrayList;
 
