@@ -32,7 +32,7 @@ public class KnapSack01
                     dp[j] = Math.max(dp[j], dp[j - arr[i][1]] + arr[i][0]);
 
             }
-            //dp = dp2;
+            //dp= dp2;
             System.out.println();
         }
         return dp[w];

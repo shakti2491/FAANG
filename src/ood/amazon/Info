@@ -1,0 +1,25 @@
+Four Actors
+
+1. Seller
+2. Buyer
+3. Admin
+4. System
+
+
+FR
+
+1.Seller can sell/ add update products
+2. Customer  can search (show results if can be delivered)
+3. Customer can add products to cart
+4 Customer can place Order and make payment
+5 System will send notifications.
+
+
+DB Model
+
+// keep this NoSQL database
+Product
+name desc price availableCount category
+
+Item
+productId quantity price

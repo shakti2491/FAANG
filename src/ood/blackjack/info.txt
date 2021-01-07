@@ -1,0 +1,11 @@
+Card Class
+
+Every Card has a Suit
+ Heart, Clubs, Diamonds,Spades
+
+ Every card has a Rank(its value)
+   Ace = 1 or 11
+   Number Cards = 2 -10
+   Face Cards (Jack, Queen , King)+10
+
+Each card can be face up and down

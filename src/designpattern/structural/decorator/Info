@@ -1,0 +1,18 @@
+Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these
+objects inside special wrapper objects that contain the behaviors.
+
+
+Identification: Decorator can be recognized by creation methods or constructor that
+accept objects of the same class or interface as a current class.
+
+
+The Java File class, java.io.File in the Java IO API gives you access to the underlying file system.
+Using the Java File class you can:
+
+Check if a file or directory exists.
+Create a directory if it does not exist.
+Read the length of a file.
+Rename or move a file.
+Delete a file.
+Check if path is file or directory.
+Read list of files in a directory.

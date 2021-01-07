@@ -1,0 +1,33 @@
+FR
+ 1. Search the product and also show only results which are deliverable for better UX
+ 2. Cart/ WishList
+ 3. CheckOut
+ 4. View Orders
+
+
+ NFR
+
+ - Low Latency
+ - Highly Availability // search -->> eventual consistency
+ - High Consistency // payment and inventory counting
+
+
+Reverse Proxy
+
+ - Single entry Url
+ - Load Balancing
+ - Isolation
+ - security against external traffic
+ - Canary deployment(A/B testing)
+ - caching web acceleration
+
+
+
+Item Service
+source of truth for all items
+
+addItem()
+getItem()
+updateItem()
+removeItem()
+getBulkItem()

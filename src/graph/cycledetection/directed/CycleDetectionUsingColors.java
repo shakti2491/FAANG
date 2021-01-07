@@ -31,14 +31,9 @@ public class CycleDetectionUsingColors
             if(color[child] == 0)
                 if(dfsCheck(color,child,graph))
                     return true;
-
         }
-
         color[u] = 2;
         return false;
-
-
-
     }
 
     public static void main(String[] args)

@@ -1,0 +1,14 @@
+Functional
+
+1. put(key, value)
+2. get(key)
+
+
+Non-funciontal
+
+1. Scalable
+2. Highly available
+3. Fault Tolerant
+4. Low Latency
+5. Highly performant
+6 Durability(if data persistent is important)

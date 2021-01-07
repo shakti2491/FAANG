@@ -1,0 +1,22 @@
+IO streams endless flow of data
+
+Read data using InputStream or Reader
+Write data using OutputStream or Writer
+
+
+Source and Destinations fo data
+
+Files
+Pipes
+Networks
+In-memory Buffers(eg. Arrays)
+System.in  , System.out
+
+
+
+Purposes
+1 File Acces
+2 Network Access
+3Internal memory buffer
+Buffering
+Filtering

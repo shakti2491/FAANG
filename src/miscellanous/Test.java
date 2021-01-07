@@ -1,17 +1,90 @@
 package miscellanous;
 
-import java.util.ArrayList;
-import java.util.List;
+import javafx.util.Pair;
+
+import java.util.*;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Delayed;
+import java.util.concurrent.TimeUnit;
 
 public class Test
 {
     public static void main(String[] args)
     {
 
-        addBinary("111","1");
+        lengthOfLongestSubstring("abcabcbb");
+    }
+    static class Task implements Delayed{
+        @Override public long getDelay(TimeUnit timeUnit)
+        {
+            return 0;
+        }
+
+        @Override public int compareTo(Delayed delayed)
+        {
+            return 0;
+        }
     }
     // Function to print all the perfect
     // squares from the given range
+    PriorityQueue<Pair<Character,Integer>> availablePool;
+    Queue<Pair<Character, Integer>> waitPool;
+    int N;
+    public int leastInterval(char[] tasks, int n) {
+        availablePool = new PriorityQueue<>((a,b)->b.getValue()-a.getValue());
+        // intially everything will be available
+        // available pool with waiting period
+        N = n;
+        waitPool = new ArrayDeque<>(N+1);
+        Map<Character,Integer> map = new HashMap<>();
+        for(int i=0;i<tasks.length;i++)
+            map.put(tasks[i], map.getOrDefault(tasks[i],0)+1);
+
+        for(Map.Entry<Character,Integer> entry : map.entrySet()){
+            availablePool.offer(new Pair<>(entry.getKey(),entry.getValue()));
+        }
+        int runTime = 0;
+        while(!waitPool.isEmpty() || !availablePool.isEmpty()){
+
+            Pair<Character,Integer> runTask = availablePool.poll();
+            int count = runTask.getValue();
+
+            if(count > 1){
+                updateWaitPool(new Pair<>(runTask.getKey(), runTask.getValue()-1));
+            }
+
+            runTime++;
+        }
+
+        return runTime;
+    }
+
+    void updateWaitPool(Pair<Character,Integer> task){
+        Pair<Character,Integer> pair = waitPool.poll();
+        //waitPool.
+
+
+}
+    public static int lengthOfLongestSubstring(String s) {
+        int[] index = new int[26];
+        Arrays.fill(index,-1);
+        char[] chars = s.toCharArray();
+        int i =-1;
+        int j = 0;
+        int len = 1;
+        while(j<chars.length){
+            if(index[chars[j]-'a']!=-1){
+                if(j-i>len)
+                    len =j-i;
+                if(i<index[chars[j]-'a'])
+                    i = index[chars[j]-'a']+1;
+            }
+            index[chars[j]-'a'] = j;
+            j++;
+        }
+        return len;
+    }
+
     public static String addBinary(String a, String b) {
         char[] charsA = a.toCharArray();
         char[] charsB = b.toCharArray();

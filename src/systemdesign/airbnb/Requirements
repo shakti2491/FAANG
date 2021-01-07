@@ -1,0 +1,30 @@
+Functional Requirement
+
+
+-Hotel Manager
+ onboarding
+ updates
+ Booking stats
+
+
+-USER
+ search
+ Book
+ check Bookings
+
+- Analytics
+
+
+
+
+  Non Functional
+
+
+  -Low Latencty
+  -High Availability
+  -High Consistency
+  - Scale
+      500k Hotels
+      10 M Rooms
+      1000 Rooms/Hotel
+

@@ -1,0 +1,59 @@
+package string;
+
+public class LongestRepeatedSubstring
+{
+    void computeLPSArray(String pat, int M, int[] lps){
+        // length of the previous longest prefix suffix
+        int len = 0;
+        int i = 1;
+        lps[0] = 0; // lps[0] is always 0
+
+        while (i<M){
+            if(pat.charAt(i) == pat.charAt(len)){
+                len++;
+                lps[i] = len;
+                i++;
+            }else{
+                if(len!=0){
+                    len = lps[len-1];
+                }else{
+                    lps[i]=len;
+                    i++;
+                }
+            }
+        }
+    }
+
+    void KMPSearch(String pat, String txt){
+        int M= pat.length();
+        int N = txt.length();
+        int [] lps = new int[M];
+        computeLPSArray(pat,M,lps);
+
+        // index for text
+        int i=0;
+        // index for pattern
+        int j=0;
+
+        while(i<N){
+            if(pat.charAt(j)==txt.charAt(i)){
+                i++;
+                j++;
+            }
+            if(j==M){
+                System.out.println("Patten found at index"+(i-j));
+                j = lps[j-1];
+            }
+            else if(i<N && pat.charAt(j)!=txt.charAt(i)){
+                if(j!=0){
+                    j = lps[j-1];
+                }
+                else
+                    i++;
+
+            }
+
+        }
+
+    }
+}

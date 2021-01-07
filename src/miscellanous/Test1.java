@@ -11,14 +11,29 @@ public class Test1
         String[] sttrs= new String[]{"a", "banana", "app", "appl", "ap", "apply", "apple"};
         Arrays.sort(sttrs);
         int x =-1 ;
+        int[] arr = {1,3 ,7};
+
+        System.out.println(Arrays.binarySearch(arr,19));
+
+        StringBuilder sb = new StringBuilder();
+        Arrays.toString(args);
         System.out.println(x>>>1);
-        partitionLabels("ababcbacadefegdehijhkli");
+      //  partitionLabels("ababcbacadefegdehijhkli");
+        System.out.println(  intToString(5));
 
 // topKFrequent(new int[]{1,1,1,2,2,3},2);
 
       //  hammingDistance(1,4);
         // minPathSumHelper2(new int[][] {{1,2,5},{3,2,1}});
         //System.out.println(findIndex(new int[]{8,5,1,7,10,12}, 5,false));
+    }
+
+    public static String intToString(int x) {
+        char[] bytes = new char[4];
+        for(int i = 3; i > -1; --i) {
+            bytes[3 - i] = (char) (x >> (i * 8) & 0xff);
+        }
+        return new String(bytes);
     }
 
     String str = "";

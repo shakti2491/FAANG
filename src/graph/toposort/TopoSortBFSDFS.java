@@ -12,7 +12,6 @@ public class TopoSortBFSDFS
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         // check cycle first
         adjList = new ArrayList[numCourses];
-        boolean visited[] = new boolean[numCourses];
         order = new int[numCourses];
         inDeg = new int[numCourses];
         buildGraph(prerequisites);
@@ -27,11 +26,10 @@ public class TopoSortBFSDFS
             int vertex = q.poll();
             order[i++] = vertex;
             for(int child: adjList[vertex]){
-                if(!visited[child]){
                     inDeg[child]--;
                     if(inDeg[child]==0)
                         q.offer(child);
-                }
+
             }
         }
 

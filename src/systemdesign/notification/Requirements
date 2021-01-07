@@ -1,0 +1,36 @@
+FR
+1. Send Notifications
+2. Extendable from SMS or Email oe WhatsApp message
+3. Prioritization(OTP vs promotional message)
+4. Rate Limiting(Transactional messages need not to have rate but promotional offers message should be limited)
+
+
+NFR
+
+1.Highly Available
+2 More Clients can be added easily
+3. Scalable
+
+
+
+
+API
+
+
+
+send(api_key, userid, message, email,type);
+send(api_key,userid,message,type)
+
+
+Take the request and put in Kafka and process asynchronously.
+
+1. Notification service will do basic validations like api key not null and user id should be not null, message should not be null
+2. Notification validation and prioritizer
+   priorities 1 OTP 2 Transaction 3 promotional
+
+3 different topic for different priorities
+4. No lag for high priority messages
+5. rate liniting - is client allowed to send these many messages or user has receive the threshold of day messages
+
+
+

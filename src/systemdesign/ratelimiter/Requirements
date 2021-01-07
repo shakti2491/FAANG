@@ -1,0 +1,14 @@
+Functional
+
+1. boolean allowRequest(request)
+
+Non-Functional
+1. Low Latency
+2. Accurate
+3 Scalable( supports arbitarily large number)
+4 Highly Available
+5 Fault Tolerance
+
+
+
+Throttle rules stored in the database which every service provider inserts into database

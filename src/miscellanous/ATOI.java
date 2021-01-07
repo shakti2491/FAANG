@@ -12,6 +12,7 @@ public class ATOI
 
     static int myAtoi(String str) {
 
+
         // trim
         str = str.trim();
 

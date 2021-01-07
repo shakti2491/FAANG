@@ -59,6 +59,10 @@ public class RepairEdges
         int n = 5;
         int[][] edges = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {1, 5}};
         int[][] edgesToRepair = {{1, 2, 12}, {3, 4, 30}, {1, 5, 8}};
-        repairEdges(n, edges, edgesToRepair);
+        int x = 3;
+        int y =2;
+        double d = (double) x/y;
+        System.out.println(d);
+        //repairEdges(n, edges, edgesToRepair);
     }
 }

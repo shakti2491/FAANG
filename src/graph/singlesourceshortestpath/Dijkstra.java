@@ -6,7 +6,6 @@ import graph.utils.*;
 
 public class Dijkstra
 {
-    Set<Integer> setX = new HashSet<>();
     Set<Integer> setV_X = new HashSet<>();
     Map<Integer, Integer> dijkstraScore = new HashMap<>();
     PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(a -> dijkstraScore.get(a)));
@@ -16,23 +15,23 @@ public class Dijkstra
         this.initialization(source, graph.getV());
         do{
             Integer vertex = pq.poll();
-            List<Integer> children  = graph.getAdj().get(vertex);
-            setX.add(vertex);
             setV_X.remove(vertex);
-            for(int child: children){
-                if(dijkstraScore.get(child)< dijkstraScore.get(vertex)+graph.getWeightMap().get(vertex+"-"+child)){
-                    pq.remove(child);
-                    int newScore = dijkstraScore.get(vertex)+graph.getWeightMap().get(vertex+"-"+child);
-                    dijkstraScore.put(child, newScore);
-                    pq.offer(child);
-                }
-            }
-
+            updateDijkstraScore(graph, vertex);
         }while(!pq.isEmpty());
-
-
-
         return null;
+    }
+
+    private void updateDijkstraScore(DirectedGraph graph, Integer vertex)
+    {
+        List<Integer> children  = graph.getAdj().get(vertex);
+        for(int child: children){
+            if(dijkstraScore.get(child)< dijkstraScore.get(vertex)+ graph.getWeightMap().get(vertex +"-"+child)){
+                pq.remove(child);
+                int newScore = dijkstraScore.get(vertex)+ graph.getWeightMap().get(vertex +"-"+child);
+                dijkstraScore.put(child, newScore);
+                pq.offer(child);
+            }
+        }
     }
 
     private void initialization(int source, int vertices){
@@ -45,6 +44,5 @@ public class Dijkstra
         }
         dijkstraScore.put(source,0);
         pq.offer(source);
-
     }
 }
