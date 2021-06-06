@@ -1,7 +1,7 @@
 package com.redfin.foodtruck;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+//import com.google.gson.Gson;
+//import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -27,9 +27,9 @@ public class FoodTruckFinderDaoImpl implements FoodTruckFinderDao
                 result.append(line);
             }
             rd.close();
-            Gson gson = new Gson();
-            List<FoodTruck> foodTruckDetails = gson.fromJson(result.toString(), new TypeToken<List<FoodTruck>>(){}.getType());
-            return foodTruckDetails;
+//            Gson gson = new Gson();
+//            List<FoodTruck> foodTruckDetails = gson.fromJson(result.toString(), new TypeToken<List<FoodTruck>>(){}.getType());
+//            return foodTruckDetails;
         } catch (Exception ex) {
             // TODO should throw
             System.out.println(ex.getMessage());

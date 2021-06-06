@@ -2,7 +2,7 @@ package designpattern.structural.decorator.datasource;
 
 public class DataSourceDecorator implements DataSource
 {
-    private DataSource wrapee;
+    private final DataSource wrapee;
 
     DataSourceDecorator(DataSource source){
         this.wrapee = source;

@@ -11,7 +11,7 @@ public class Stack
 {
 
         public static void main(String[] args) throws InterruptedException {
-            StandardStack<Integer> stack = new StandardStack<>();
+            LockFreeStack<Integer> stack = new LockFreeStack<>();
             //LockFreeStack<Integer> stack = new LockFreeStack<>();
             Random random = new Random();
 

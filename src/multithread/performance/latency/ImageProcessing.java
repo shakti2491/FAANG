@@ -106,7 +106,5 @@ public class ImageProcessing
     public static int getGreen(int rgb){
         return (rgb & 0x0000FF00)>>8;
     }
-    public static int getBlue(int rgb){
-        return rgb & 0x000000FF;
-    }
+    public static int getBlue(int rgb){ return rgb & 0x000000FF; }
 }

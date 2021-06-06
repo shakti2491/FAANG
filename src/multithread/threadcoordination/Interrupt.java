@@ -29,9 +29,14 @@ public class Interrupt
 
         private BigInteger pow(BigInteger base, BigInteger power){
             BigInteger result = BigInteger.ONE;
+
+            //todo hot code
             for(BigInteger i = BigInteger.ZERO; i.compareTo(power)!=0; i = i.add(BigInteger.ONE)){
                 if(Thread.currentThread().isInterrupted())
+                {
+                    System.out.println("Thread is prematurely executed.");
                     return BigInteger.ZERO;
+                }
                 result = result.multiply(base);
             }
             return result;

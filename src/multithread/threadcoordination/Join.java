@@ -16,13 +16,17 @@ public class Join
                 .collect(Collectors.toList());
         threads.forEach(Thread::start);
 
-        for (FactorialThread thread : threads)
+        int counter = threads.size();
+        while(counter>0)
         {
-            thread.join(2000);
-            if(thread.isFinished)
-            System.out.println("Factorial of "+thread.getInputNumber()+" is "+thread.getResult());
-            else
-                System.out.println("In Process");
+            for (FactorialThread thread : threads)
+            {
+                thread.join(2000);
+                if (thread.isFinished)
+                    System.out.println("Factorial of " + thread.getInputNumber() + " is " + thread.getResult());
+                else
+                    System.out.println("In Process");
+            }
         }
 
     }

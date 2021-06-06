@@ -30,6 +30,8 @@ public class Synchronized
         private int counter1 = 0;
         private int counter2 = 0;
 
+        //Two locks for two shared resources
+        // we don't we want
         private Object lock1 = new Object();
         private Object lock2 = new Object();
 

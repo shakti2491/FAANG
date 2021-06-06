@@ -62,6 +62,7 @@ public class Atomic
         private volatile long count  =0;
         private volatile double average = 0.0;
 
+        // critical section
         public synchronized void addSample(long sample){
             double currentSum = average*count;
             count++;
